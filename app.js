@@ -12,7 +12,7 @@ const EXERCISES_DIR = 'exercises';
 const TESTS_DIR = 'tests';
 const EXERCISES_NAME_ROOT = 'ex';
 const start = 1;
-const end = 11;
+const end = 17;
 const exerciseNums = _.range(start)(_.inc(end));
 const exercises = load(
   EXERCISES_DIR,

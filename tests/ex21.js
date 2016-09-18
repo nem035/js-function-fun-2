@@ -1,5 +1,5 @@
 const {
-  assertDeepEqualFunctors
+  assertDeepEqual
 } = require('./helpers');
 const Maybe = require('pointfree-fantasy/instances/maybe');
 
@@ -15,8 +15,8 @@ const user = {
 };
 
 module.exports = function ex21(getUserStreetName) {
-  assertDeepEqualFunctors(
-    Maybe(Maybe(Maybe(user.address.street.name))),
+  assertDeepEqual(
+    Maybe(user.address.street.name),
     getUserStreetName(user)
   );
 };

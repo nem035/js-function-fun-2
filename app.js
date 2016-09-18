@@ -1,17 +1,39 @@
-const path = require('path');
 const _ = require('ramda');
 
-const EXERCISES_PATH = './exercises/';
-const NAME_ROOT = 'ex';
+const {
+  log,
+  logExerciseStart,
+  logExerciseEnd
+} = require('./log');
 
-const [startEx, endEx] = [1, 4];
+const load = require('./load');
 
-const exerciseNums = _.range(startEx)(_.inc(endEx));
-const numToName = _.concat(NAME_ROOT);
-const nameToPath = _.concat(EXERCISES_PATH);
-const numToPath = _.compose(nameToPath, numToName);
-const exercisePaths = _.map(numToPath)(exerciseNums);
-const exercises = _.map(require, exercisePaths);
-const invoke = (fn) => fn();
+const EXERCISES_DIR = 'exercises';
+const TESTS_DIR = 'tests';
+const EXERCISES_NAME_ROOT = 'ex';
+const start = 1;
+const end = 7;
+const exerciseNums = _.range(start)(_.inc(end));
+const exercises = load(
+  EXERCISES_DIR,
+  EXERCISES_NAME_ROOT,
+  exerciseNums
+);
 
-_.forEach(invoke, exercises);
+const tests = load(
+  TESTS_DIR,
+  EXERCISES_NAME_ROOT,
+  exerciseNums
+);
+
+const files = _.mergeAll([exercises, tests])
+
+const run = function(num) {
+  const ex = files[`${EXERCISES_DIR}-${EXERCISES_NAME_ROOT}${num}`];
+  const test = files[`${TESTS_DIR}-${EXERCISES_NAME_ROOT}${num}`];
+  test(ex());
+};
+
+const execute = _.compose(logExerciseEnd, run, logExerciseStart);
+
+_.forEach(execute, exerciseNums);

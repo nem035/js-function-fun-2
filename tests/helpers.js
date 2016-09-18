@@ -15,13 +15,20 @@ function assertDeepEqual(x, y) {
   if (x.val !== y.val) throw ("expected " + inspectIt(x) + " to equal " + inspectIt(y));
 }
 
+function assertDeepEqualFunctors(x, y) {
+  if (inspectIt(x) !== inspectIt(y)) throw ("expected " + inspectIt(x) + " to equal " + inspectIt(y));
+}
+
 function inspectIt(x) {
-  return (x.inspect && x.inspect()) || (x.toString && x.toString()) || x.valueOf(); //hacky for teachy.
+  return (x.inspect && x.inspect()) ||
+    (x.toString && x.toString()) ||
+    x.valueOf(); //hacky for teachy.
 }
 
 module.exports = {
   assertEqual,
   assertEqualArrays,
+  assertDeepEqualFunctors,
   assertDeepEqual,
   inspectIt
 };

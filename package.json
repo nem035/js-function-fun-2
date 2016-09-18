@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bacon": "0.0.1",
+    "baconjs": "^0.7.86",
     "data.either": "^1.4.0",
     "data.future": "^2.3.0",
     "pointfree-fantasy": "^0.1.3",

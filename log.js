@@ -1,14 +1,15 @@
 module.exports = {
   logExerciseStart(num) {
     console.log(`
------------------------------------------
-Exercise ${num}
-`);
+|-----------------------------------------
+| Exercise ${num}
+|`);
     return num;
   },
 
   logExerciseEnd() {
-    console.log("Test passed.")
+    console.log(`| Test passed.
+|-----------------------------------------`);
   },
 
   log() {

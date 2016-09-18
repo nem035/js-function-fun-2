@@ -12,4 +12,6 @@ Continuation of [js-function-fun](https://github.com/nem035/js-function-fun)
   - [PointFree Fantasy](https://github.com/DrBoolean/pointfree-fantasy)
   - [Ramda](http://ramdajs.com/)
 
+# Running the exercises
 
+    node app

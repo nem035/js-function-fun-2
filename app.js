@@ -1,49 +1,39 @@
 const _ = require('ramda');
 
 const {
-  log,
   logExerciseStart,
   logExerciseEnd
 } = require('./log');
 
-const load = require('./load');
+const loadFile = require('./load-file');
 
 const EXERCISES_DIR = 'exercises';
 const TESTS_DIR = 'tests';
-const EXERCISES_NAME_ROOT = 'ex';
+const NAME_ROOT = 'ex';
 const start = 1;
 const end = 21;
+
 const exerciseNums = _.range(start)(_.inc(end));
-const exercises = load(
+
+const loadExercise = loadFile(
   EXERCISES_DIR,
-  EXERCISES_NAME_ROOT,
-  exerciseNums
+  NAME_ROOT
 );
 
-const tests = load(
+const loadTest = loadFile(
   TESTS_DIR,
-  EXERCISES_NAME_ROOT,
-  exerciseNums
+  NAME_ROOT
 );
 
-const files = _.mergeAll([exercises, tests])
-const extract = (dir, num) => files[`${dir}-${EXERCISES_NAME_ROOT}${num}`];
-const extractExerciseAndText = (num) => ({
-  ex: extract(EXERCISES_DIR, num),
-  test: extract(TESTS_DIR, num)
-});
-
-const run = function({
-  ex,
-  test
-}) {
-  test(ex());
+const testExercise = (num) => {
+  const exercise = loadExercise(num);
+  const test = loadTest(num);
+  test(exercise());
 };
 
 const execute = _.compose(
   logExerciseEnd,
-  run,
-  extractExerciseAndText,
+  testExercise,
   logExerciseStart
 );
 

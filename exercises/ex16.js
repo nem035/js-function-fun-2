@@ -3,15 +3,10 @@ const {
   map,
   compose
 } = require('pointfree-fantasy');
-const {
-  extendFunctionPrototype
-} = require('../custom/io');
 const fs = require('fs');
 const path = require('path');
 
-extendFunctionPrototype();
-
-// Use getURL() / getProtocol() and runIO() 
+// Use getURL() / getProtocol()
 // to get the protocol of the url.
 module.exports = function ex16() {
 

@@ -1,4 +1,8 @@
 const _ = require('ramda');
+const {
+  extendFunctionPrototype
+} = require('./custom/io');
+extendFunctionPrototype();
 
 const {
   logExerciseStart,

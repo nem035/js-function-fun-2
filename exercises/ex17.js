@@ -4,11 +4,6 @@ const {
   compose
 } = require('pointfree-fantasy');
 const Maybe = require('pointfree-fantasy/instances/maybe');
-const {
-  extendFunctionPrototype
-} = require('../custom/io');
-
-extendFunctionPrototype();
 
 // Write a function that returns 
 // the Maybe(email) of the User 

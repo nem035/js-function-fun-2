@@ -27,13 +27,24 @@ const tests = load(
 );
 
 const files = _.mergeAll([exercises, tests])
+const extract = (dir, num) => files[`${dir}-${EXERCISES_NAME_ROOT}${num}`];
+const extractExerciseAndText = (num) => ({
+  ex: extract(EXERCISES_DIR, num),
+  test: extract(TESTS_DIR, num)
+});
 
-const run = function(num) {
-  const ex = files[`${EXERCISES_DIR}-${EXERCISES_NAME_ROOT}${num}`];
-  const test = files[`${TESTS_DIR}-${EXERCISES_NAME_ROOT}${num}`];
+const run = function({
+  ex,
+  test
+}) {
   test(ex());
 };
 
-const execute = _.compose(logExerciseEnd, run, logExerciseStart);
+const execute = _.compose(
+  logExerciseEnd,
+  run,
+  extractExerciseAndText,
+  logExerciseStart
+);
 
 _.forEach(execute, exerciseNums);

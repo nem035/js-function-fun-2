@@ -3,13 +3,12 @@ module.exports = {
     console.log(`
 -----------------------------------------
 Exercise ${num}
-
 `);
     return num;
   },
 
   logExerciseEnd() {
-    console.log("All tests pass.")
+    console.log("Test passed.")
   },
 
   log() {

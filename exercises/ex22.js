@@ -2,7 +2,7 @@ const _ = require('ramda');
 const {
   map,
   compose,
-  mjoin
+  chain
 } = require('pointfree-fantasy');
 
 const Future = require('data.future');
@@ -41,8 +41,7 @@ function getComments(i) {
 
 module.exports = function ex22() {
   const extractComments = compose(
-    mjoin,
-    map(getComments),
+    chain(getComments),
     map(_.prop('id')),
     getPost
   );

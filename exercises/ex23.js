@@ -1,8 +1,4 @@
 const _ = require('ramda');
-const {
-  ap
-} = require('pointfree-fantasy');
-
 const Maybe = require('pointfree-fantasy/instances/Maybe');
 
 // Write a function that add's two possibly

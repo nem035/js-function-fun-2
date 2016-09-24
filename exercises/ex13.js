@@ -9,11 +9,11 @@ const {
 // and Left("You need > 3") otherwise.
 module.exports = function ex13() {
 
-  const check = function(x) {
-    return x.length > 3 ?
-      Right(x) :
-      Left("You need > 3");
-  };
+  const check = (x) => (
+    x.length > 3 ?
+    Right(x) :
+    Left("You need > 3")
+  );
 
   return check;
 };

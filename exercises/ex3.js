@@ -7,9 +7,7 @@ const _ = require('ramda');
 // this with currying and one of the list
 // functions _.map, _.filter, or _.reduce.
 
-const greater = function(a, b) {
-  return a > b ? a : b;
-};
+const greater = (a, b) => a > b ? a : b;
 
 module.exports = function ex3() {
   const max = _.reduce(greater)(Number.MIN_SAFE_INTEGER);

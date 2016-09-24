@@ -1,21 +1,23 @@
-function assertEqualArrays(x, y) {
-  if (x.length !== y.length) throw ("expected " + x + " to equal " + y);
+const xymsg = (x, y) => `expected ${x} to equal${y}`;
+
+const assertEqualArrays = (x, y) => {
+  if (x.length !== y.length) throw xymsg(x, y);
   for (const i in x) {
     if (x[i] !== y[i]) {
-      throw ("expected " + x + " to equal " + y);
+      throw xymsg(x, y);
     }
   }
 }
 
-function assertEqual(x, y) {
-  if (x !== y) throw ("expected " + x + " to equal " + y);
+const assertEqual = (x, y) => {
+  if (x !== y) xymsg(x, y);
 }
 
-function assertDeepEqual(x, y) {
-  if (x.val !== y.val) throw ("expected " + inspectIt(x) + " to equal " + inspectIt(y));
+const assertDeepEqual = (x, y) => {
+  if (x.val !== y.val) throw xymsg(inspectIt(x), inspectIt(y));
 }
 
-function inspectIt(x) {
+const inspectIt = (x) => {
   return (x.inspect && x.inspect()) ||
     (x.toString && x.toString()) ||
     x.valueOf(); //hacky for teachy.

@@ -17,11 +17,11 @@ const showWelcome = compose(
   _.prop('name')
 );
 
-const checkActive = function(user) {
-  return user.active ?
-    Right(user) :
-    Left('Your account is not active')
-};
+const checkActive = (user) => (
+  user.active ?
+  Right(user) :
+  Left('Your account is not active')
+)
 
 module.exports = function ex12() {
 

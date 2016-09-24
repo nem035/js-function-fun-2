@@ -5,9 +5,7 @@ const _ = require('ramda')
 // another function that combines functions
 // to let us write code without glue constiables.
 
-const fork = _.curry(function(lastly, f, g, x) {
-  return lastly(f(x), g(x));
-});
+const fork = _.curry((lastly, f, g, x) => lastly(f(x), g(x)));
 
 // As you can see, the fork function is a
 // pipeline like compose, except it duplicates

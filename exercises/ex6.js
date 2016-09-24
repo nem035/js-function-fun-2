@@ -8,9 +8,9 @@ const names = require('./ex5')();
 
 module.exports = function ex6() {
 
-  const isAuthor = function(name, list) {
-    return _.compose(_.contains(name), names)(list);
-  };
+  const isAuthor = (name, list) => (
+    _.compose(_.contains(name), names)(list)
+  );
 
   return isAuthor;
 }

@@ -8,11 +8,11 @@ const {
 
 // Turn the person events into a stream of the 
 // of <person>person.name</person> strings
-const toPersonString = function(obj) {
-  return `<person>${obj.name}</person>`;
-};
+const toPersonString = ({
+  name
+}) => `<person>${name}</person>`;
 
-const Emitter = require('./myemitter');
+const Emitter = require('../helpers/myemitter');
 
 module.exports = function ex20() {
   const personEvents = Bacon.fromEvent(new Emitter(), 'person');

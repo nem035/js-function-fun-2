@@ -6,7 +6,7 @@ const Maybe = require('pointfree-fantasy/instances/maybe');
 module.exports = function ex10(initial) {
   const user1 = {
     id: 1,
-    name: "Albert"
+    name: 'Albert'
   };
   const user2 = {
     id: 1

@@ -1,22 +1,14 @@
 const {
   assertEqualArrays
 } = require('./helpers');
-const fs = require('fs');
-const path = require('path');
 
-const comments = JSON.parse(
-  fs
-  .readFileSync(
-    path.join(__dirname, '..', 'exercises', 'comments.json')
-  )
-  .toString()
-);
+const comments = require('../helpers/get-comments-sync')();
 
 module.exports = function ex22(extractComments) {
-  extractComments('post.json')
+  extractComments('post')
     .fork(
       console.error,
-      function(extracted) {
+      (extracted) => {
         assertEqualArrays(
           comments,
           extracted

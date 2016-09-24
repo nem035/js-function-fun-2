@@ -5,11 +5,11 @@ const Maybe = require('pointfree-fantasy/instances/maybe');
 
 const user = {
   id: 2,
-  name: "Albert",
+  name: 'Albert',
   address: {
     street: {
       number: 22,
-      name: "Walnut St"
+      name: 'Walnut St'
     }
   }
 };

@@ -2,7 +2,7 @@ const {
   assertEqual
 } = require('./helpers');
 
-const articles = require('./articles');
+const articles = require('../data/articles');
 
 module.exports = function ex6(isAuthor) {
   assertEqual(

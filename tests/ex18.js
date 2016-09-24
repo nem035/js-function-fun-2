@@ -1,22 +1,14 @@
 const {
   assertEqual
 } = require('./helpers');
-const fs = require('fs');
-const path = require('path');
 
-const post = JSON.parse(
-  fs
-  .readFileSync(
-    path.join(__dirname, '..', 'exercises', 'post.json')
-  )
-  .toString()
-);
+const post = require('../helpers/get-post-sync');
 
 module.exports = function ex18(getTitle) {
-  getTitle('post.json')
+  getTitle('post')
     .fork(
       console.error,
-      function(title) {
+      (title) => {
         assertEqual(
           post.title,
           title

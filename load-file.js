@@ -2,7 +2,7 @@ const path = require('path');
 const _ = require('ramda');
 
 module.exports = _.curry(
-  function load(dir, root, fileNum) {
+  (dir, root, fileNum) => {
     const buildFileName = _.concat(root);
 
     const toArray = (x) => [x];

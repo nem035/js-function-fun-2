@@ -10,10 +10,7 @@ const {
 // and Either as a functor to save the 
 // user if they are valid
 
-const save = function(x) {
-  return x;
-};
-
+const save = (x) => x;
 const check = require('./ex13')();
 
 module.exports = function ex14() {

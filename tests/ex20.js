@@ -4,16 +4,10 @@ const {
 const fs = require('fs');
 const path = require('path');
 
-const person = JSON.parse(
-  fs
-  .readFileSync(
-    path.join(__dirname, '..', 'exercises', 'person.json')
-  )
-  .toString()
-);
+const person = require('../helpers/get-person-sync')();
 
 module.exports = function ex20(personStrings) {
-  personStrings.onValue(function(str) {
+  personStrings.onValue((str) => {
     assertEqual(
       `<person>${person.name}</person>`,
       str

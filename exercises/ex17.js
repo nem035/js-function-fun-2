@@ -12,7 +12,7 @@ const Maybe = require('pointfree-fantasy/instances/maybe');
 // from the cache so you can 
 // _.prop() the email
 
-const cache = require('./cache');
+const cache = require('../data/cache');
 
 const getCache = function(x) {
   return Maybe(cache[x]);

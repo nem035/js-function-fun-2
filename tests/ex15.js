@@ -5,15 +5,12 @@ const {
   runIO
 } = require('../custom/io');
 
-const fs = require('fs');
-const path = require('path');
-const text = fs.readFileSync(
-  path.join(__dirname, '..', 'exercises', 'happyface.txt')
-).toString();
+const getTextFileSync = require('../helpers/get-text-file-sync');
+const text = getTextFileSync('happyface')
 
 module.exports = function ex15(getStrippedText) {
   assertEqual(
     text.trim().replace(/\s+/g, ''),
-    runIO(getStrippedText('happyface.txt'))
+    runIO(getStrippedText('happyface'))
   );
 };

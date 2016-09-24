@@ -3,19 +3,14 @@ const {
   compose
 } = require('pointfree-fantasy');
 
-const fs = require('fs');
-const path = require('path');
+const getTextFileSync = require('../helpers/get-text-file-sync');
 
 // Get the text from the IO and strip the spaces
 const getIOText = function(name) {
-  return fs.readFileSync(
-    path.join(__dirname, name)
-  ).toString();
+  return getTextFileSync(name);
 }.toIO();
 
-const stripSpaces = function(s) {
-  return s.replace(/\s+/g, '');
-};
+const stripSpaces = (s) => s.replace(/\s+/g, '');
 
 module.exports = function ex15() {
 

@@ -11,7 +11,7 @@ const getPlayerFromCache = function(p) {
   return cache[p];
 }.toIO();
 
-module.exports = function ex25() {
+module.exports = function ex26() {
   const getPlayers = liftA2(
     game,
     getPlayerFromCache('p2'),

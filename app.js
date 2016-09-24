@@ -15,7 +15,7 @@ const EXERCISES_DIR = 'exercises';
 const TESTS_DIR = 'tests';
 const NAME_ROOT = 'ex';
 const start = 1;
-const end = 29;
+const end = 30;
 
 const exerciseNums = _.range(start)(_.inc(end));
 

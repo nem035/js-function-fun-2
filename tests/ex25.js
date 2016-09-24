@@ -6,7 +6,7 @@ const Maybe = require('pointfree-fantasy/instances/Maybe');
 const comments = require('../helpers/get-comments-sync')();
 const post = require('../helpers/get-post-sync')();
 
-module.exports = function ex24(makeHtml) {
+module.exports = function ex25(makeHtml) {
   makeHtml.fork(console.error, (html) => {
     assertEqual(
       `<div>${post.title}</div>` +

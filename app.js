@@ -9,7 +9,7 @@ const {
   logExerciseEnd
 } = require('./log');
 
-const loadFile = require('./load-file');
+const load = require('./load');
 
 const EXERCISES_DIR = 'exercises';
 const TESTS_DIR = 'tests';
@@ -19,12 +19,12 @@ const end = 31;
 
 const exerciseNums = _.range(start)(_.inc(end));
 
-const loadExercise = loadFile(
+const loadExercise = load(
   EXERCISES_DIR,
   NAME_ROOT
 );
 
-const loadTest = loadFile(
+const loadTest = load(
   TESTS_DIR,
   NAME_ROOT
 );

@@ -1,5 +1,6 @@
 const EventEmitter = require('events');
 const getJSONSync = require('./get-json-sync');
+const timeout = require('./settimeout-pure');
 
 class MyEmitter extends EventEmitter {
 
@@ -8,9 +9,9 @@ class MyEmitter extends EventEmitter {
 
     const person = getJSONSync('person');
 
-    setTimeout(() => {
+    timeout(() => {
       this.emit('person', person);
-    }, 300);
+    });
   }
 };
 

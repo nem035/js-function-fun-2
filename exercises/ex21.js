@@ -8,7 +8,7 @@ const Maybe = require('pointfree-fantasy/instances/maybe');
 
 // Use only safeGet() to safely return 
 // the user's street name
-const safeGet = _.curry((x, o) => Maybe(o[x]));
+const safeGet = require('../helpers/safe-get');
 
 module.exports = function ex21() {
   const getUserStreetName = compose(

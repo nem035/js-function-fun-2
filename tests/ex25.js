@@ -3,12 +3,16 @@ const {
 } = require('./helpers');
 const Maybe = require('pointfree-fantasy/instances/Maybe');
 
-module.exports = function ex24(possiblyAdd) {
-  assertDeepEqual(Maybe(5), possiblyAdd(Maybe(2), Maybe(3)));
-  assertDeepEqual(Maybe(null), possiblyAdd(Maybe(null), Maybe(3)));
-};
+const comments = require('../helpers/get-comments-sync')();
+const post = require('../helpers/get-post-sync')();
 
-ex3.fork(log, (html) => {
-  assertEqual("<div>Love them futures</div><li>This class should be illegal</li><li>Monads are like space burritos</li>", html)
-  console.log("exercise 3...ok!")
-})
+module.exports = function ex24(makeHtml) {
+  makeHtml.fork(console.error, (html) => {
+    assertEqual(
+      `<div>${post.title}</div>` +
+      `<li>${comments[0]}</li>` +
+      `<li>${comments[1]}</li>`,
+      html
+    );
+  });
+};

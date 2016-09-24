@@ -5,8 +5,8 @@ const {
 
 // Make a future by running getPost() and getComments() 
 // using applicatives, then create the Html with both
-const getPost = require('./get-post');
-const getComments = require('./get-comments');
+const getPost = require('../helpers/get-post');
+const getComments = require('../helpers/get-comments');
 
 const makeComments = _.reduce((acc, c) => `${acc}<li>${c}</li>`, '');
 const render = _.curry(

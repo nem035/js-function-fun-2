@@ -4,7 +4,7 @@ Fun with functional programming in JS.
 
 Continuation of [js-function-fun](https://github.com/nem035/js-function-fun)
 
-# Libraries used
+## Libraries used
 
   - [BaconJS](https://baconjs.github.io/)
   - [Data.Either](https://github.com/folktale/data.either)
@@ -12,7 +12,7 @@ Continuation of [js-function-fun](https://github.com/nem035/js-function-fun)
   - [PointFree Fantasy](https://github.com/DrBoolean/pointfree-fantasy)
   - [Ramda](http://ramdajs.com/)
 
-# Definitions
+## Definitions
 
 - Functor is any data type (Container) that defines how `map()` applies to it.
 
@@ -24,7 +24,7 @@ Continuation of [js-function-fun](https://github.com/nem035/js-function-fun)
 
 - Monoid is a Semigroup that defines how `empty()` applies to it.
 
-# PointFree methods
+## PointFree methods
 
 - [map](https://github.com/DrBoolean/pointfree-fantasy/blob/master/dist/pointfree.amd.js#L806)
 
@@ -203,6 +203,6 @@ Continuation of [js-function-fun](https://github.com/nem035/js-function-fun)
   checkValidations({ name: 'Bob' }) // ['missing password', 'missing email']
   ```
 
-# Running the exercises
+## Running the exercises
 
     node app
